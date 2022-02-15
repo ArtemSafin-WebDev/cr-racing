@@ -1,0 +1,129 @@
+.news {
+    margin-bottom: 9rem;
+    position: relative;
+    z-index: 5;
+}
+
+.news__heading {
+    font-weight: 600;
+    font-size: 2.9rem;
+    margin-bottom: 3rem;
+}
+
+.news__row {
+    display: flex;
+    align-items: flex-start;
+}
+
+.news__col {
+    &:nth-child(1) {
+        width: 50%;
+        flex-grow: 1;
+    }
+    &:nth-child(2) {
+        width: 50rem;
+        margin-left: 5rem;
+    }
+}
+
+.news__materials {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 3rem;
+}
+
+.news__materials-card {
+    display: flex;
+    border-radius: 2rem;
+    overflow: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    background-color: #fff;
+    box-shadow: 0 2rem 5rem -2rem rgba(black, 0.25);
+}
+
+.news__materials-card-image-container {
+    width: 15rem;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.news__materials-card-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.news__materials-card-content {
+    width: 50%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 22rem;
+    padding: 2rem 2rem;
+}
+
+.news__materials-card-info {
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    margin-bottom: 1.6rem;
+    color: #b8baba;
+    span {
+        color: var(--primary-color);
+    }
+}
+
+.news__materials-card-title {
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+.news__materials-card-btn {
+    display: flex;
+    align-items: center;
+    padding: 1.1rem 1.5rem;
+    border: 2px solid #b8baba;
+    font-size: 1.3rem;
+    line-height: 1.2;
+    color: #b8baba;
+    border-radius: 3rem;
+    font-weight: 700;
+    margin-top: auto;
+    svg {
+        flex-shrink: 0;
+        width: 1.7rem;
+        height: 1.4rem;
+        fill: currentColor;
+        margin-right: 0.8rem;
+    }
+    &:link,
+    &:visited {
+        color: #b8baba;
+    }
+}
+
+.news__other-news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.3rem;
+}
+
+.news__other-news-card-info {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #b8baba;
+    span {
+        color: var(--primary-color);
+    }
+}
+
+.news__other-news-card-heading {
+    font-size: 1.8rem;
+    line-height: 1.2;
+}

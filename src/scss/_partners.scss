@@ -1,0 +1,50 @@
+.partners {
+    margin-bottom: 15rem;
+    position: relative;
+    z-index: 1;
+}
+
+.partners__bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.partners__heading {
+    font-size: 9rem;
+    line-height: 1.2;
+    font-weight: 700;
+    color: #e2e2e2;
+    margin-bottom: 5.5rem;
+}
+
+.partners__list {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-gap: 3rem;
+    grid-row-gap: 5.5rem;
+}
+
+.partners__card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.partners__card-logo {
+    height: 8rem;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+    margin-bottom: 3rem;
+}
+
+.partners__card-title {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    color: #9a9d9d;
+}

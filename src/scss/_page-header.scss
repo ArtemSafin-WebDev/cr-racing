@@ -1,0 +1,140 @@
+.page-header__row {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding-right: 11rem;
+}
+
+.page-header__logo {
+    width: 11rem;
+    height: 11rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10rem;
+    background-color: var(--primary-color);
+}
+
+.page-header__logo-image {
+    width: 6rem;
+    height: auto;
+}
+
+.page-header__nav {
+    margin-right: auto;
+}
+
+.page-header__nav-list {
+    display: flex;
+    align-items: center;
+    gap: 5.8rem;
+}
+
+.page-header__nav-link {
+    font-size: 1.9rem;
+    line-height: 1.2;
+    font-weight: 700;
+
+    .no-touch &:hover,
+    .touch &:active {
+        color: var(--primary-color);
+    }
+}
+
+.page-header__shop-link {
+    margin-left: 3rem;
+    font-size: 1.9rem;
+    line-height: 1.2;
+    font-weight: 700;
+    margin-right: 5rem;
+
+    .no-touch &:hover,
+    .touch &:active {
+        color: var(--primary-color);
+    }
+}
+
+.page-header__languages {
+    position: relative;
+    margin-right: 4rem;
+    &:hover {
+        .page-header__languages-dropdown {
+            opacity: 1;
+            visibility: inherit;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+    }
+}
+
+.page-header__languages-current {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.9rem;
+    line-height: 1.2;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    svg {
+        flex-shrink: 0;
+        width: 0.8rem;
+        height: 0.5rem;
+        fill: black;
+        margin-left: 0.7rem;
+    }
+}
+
+.page-header__languages-dropdown {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0s linear 0.3s;
+    z-index: 40;
+    padding-top: 1rem;
+}
+
+.page-header__languages-dropdown-inner {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 0 1rem rgba(black, 0.1);
+    gap: 2rem;
+}
+
+.page-header__languages-dropdown-link {
+    font-size: 1.9rem;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.page-header__chemistry {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.9rem;
+    line-height: 1.2;
+    font-weight: 700;
+    background-color: black;
+    color: white;
+    padding: 1.6rem 3.8rem;
+    transition: background-color 0.2s, color 0.2s;
+    border-radius: 3rem;
+    &:link,
+    &:visited {
+        color: white;
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        background-color: var(--primary-color);
+    }
+}
+
+.page-header__languages-dropdown-link {
+    .no-touch &:hover,
+    .touch &:active {
+        color: var(--primary-color);
+    }
+}

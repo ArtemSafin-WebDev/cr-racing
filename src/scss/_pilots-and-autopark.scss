@@ -1,0 +1,247 @@
+.pilots-and-autopark {
+    margin-bottom: 6rem;
+    margin-top: -20rem;
+    position: relative;
+    z-index: 5;
+}
+
+.pilots-and-autopark__row {
+    display: flex;
+    align-items: flex-start;
+}
+
+.pilots-and-autopark__col {
+    &:nth-child(1) {
+        width: 50%;
+        flex-grow: 1;
+    }
+    &:nth-child(2) {
+        width: 50rem;
+        margin-left: 5rem;
+    }
+}
+
+.pilots-and-autopark__top-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+.pilots-and-autopark__heading {
+    font-weight: 600;
+    font-size: 2.9rem;
+    line-height: 1.2;
+    width: 50%;
+    flex-grow: 1;
+}
+
+.pilots-and-autopark__arrows {
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+    flex-shrink: 0;
+    gap: 2.5rem;
+}
+
+.pilots-and-autopark__arrow {
+    flex-shrink: 0;
+    width: 2.8rem;
+    height: 2.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        width: 1.2rem;
+        height: 1.8rem;
+        fill: black;
+        transition: fill 0.2s;
+    }
+
+    &.swiper-button-disabled {
+        cursor: default;
+        pointer-events: none;
+
+        svg {
+            fill: #cfcfcf;
+        }
+    }
+
+    .no-touch &:not(.swiper-button-disabled):hover {
+        svg {
+            fill: var(--primary-color);
+        }
+    }
+}
+
+
+.pilots-and-autopark__slider--pilots {
+    .swiper-slide {
+        width: 50%;
+    }
+}
+
+.pilots-and-autopark__slider-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    border-radius: 3rem;
+    overflow: hidden;
+    color: white;
+    &:link,
+    &:visited {
+        color: white;
+    }
+
+    &--dark {
+        color: #484848;
+        &:link,
+        &:visited {
+            color: #484848;
+        }
+    }
+}
+
+.pilots-and-autopark__slider-card-bg {
+    position: relative;
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    display: block;
+    &::before {
+        content: '';
+        display: block;
+        padding-bottom: 100%;
+    }
+}
+
+.pilots-and-autopark__slider-card-bg-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+.pilots-and-autopark__slider-card-content {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    padding: 4rem;
+    justify-content: flex-end;
+    z-index: 10;
+    
+}
+
+.pilots-and-autopark__slider-card-awards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.pilots-and-autopark__slider-card-award {
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+.pilots-and-autopark__slider-card-award-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    object-fit: contain;
+    flex-shrink: 0;
+    margin-right: 0.8rem;
+}
+
+.pilots-and-autopark__slider-card-info {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.pilots-and-autopark__slider-card-info-item {
+    font-size: 1.6rem;
+}
+
+.pilots-and-autopark__slider-card-name {
+    font-size: 4.4rem;
+    font-weight: 600;
+    line-height: 1.2;
+
+    .pilots-and-autopark__slider-card--dark & {
+        color: black;
+    }
+}
+
+.pilots-and-autopark__autopark-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    border-radius: 3rem;
+    overflow: hidden;
+    color: white;
+    &:link,
+    &:visited {
+        color: white;
+    }
+}
+.pilots-and-autopark__autopark-card-bg {
+    grid-column: 1 / -1;
+    grid-row: 1 / 1;
+    position: relative;
+    &::before {
+        content: '';
+        display: block;
+        padding-bottom: 77%;
+    }
+}
+
+.pilots-and-autopark__autopark-card-bg-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.pilots-and-autopark__autopark-card-content {
+    grid-column: 1 / -1;
+    grid-row: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    padding: 4rem;
+    z-index: 20;
+}
+
+.pilots-and-autopark__autopark-card-title {
+    margin-bottom: 2rem;
+    font-size: 1.9rem;
+    font-weight: 500;
+}
+
+.pilots-and-autopark__autopark-card-specs {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: auto;
+}
+
+.pilots-and-autopark__autopark-card-specs-item {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.6rem;
+    line-height: 1.2;
+    // font-weight: 500;
+}
+
+.pilots-and-autopark__autopark-card-specs-icon {
+    width: 1.8rem;
+    height: 1.8rem;
+    flex-shrink: 0;
+    object-fit: contain;
+    margin-right: 1.2rem;
+}

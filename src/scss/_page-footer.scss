@@ -1,0 +1,130 @@
+.page-footer {
+    position: relative;
+    z-index: 30;
+}
+
+.page-footer__top-row {
+    margin-bottom: 5.2rem;
+    display: flex;
+    align-items: center;
+
+}
+
+.page-footer__nav {
+    margin-right: auto;
+}
+
+.page-footer__nav-list {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+.page-footer__nav-link {
+    display: block;
+    font-size: 1.7rem;
+    line-height: 1.2;
+    font-weight: 700;
+
+    .no-touch &:hover,
+    .touch &:active {
+        color: var(--primary-color);
+    }
+}
+
+.page-footer__shop-link {
+    display: block;
+    font-size: 1.7rem;
+    line-height: 1.2;
+    font-weight: 700;
+    margin-right: 4.5rem;
+    .no-touch &:hover,
+    .touch &:active {
+        color: var(--primary-color);
+    }
+}
+
+.page-footer__chemistry-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 1.1rem 2.4rem;
+    font-size: 1.7rem;
+    line-height: 1.2;
+    font-weight: 700;
+    justify-content: center;
+    text-align: center;
+    background-color: black;
+    color: white;
+    border-radius: 3rem;
+    transition: background-color 0.2s, color 0.2s;
+    &:link,
+    &:visited {
+        color: white;
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        background-color: var(--primary-color);
+    }
+}
+
+.page-footer__bottom-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8rem;
+}
+
+.page-footer__copyright {
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 1.2;
+    margin-right: 5rem;
+    color: #9a9d9d;
+}
+
+.page-footer__policy-link {
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 1.2;
+    color: #9a9d9d;
+
+    &:link,
+    &:visited {
+        color: #9a9d9d;
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        color: var(--primary-color);
+    }
+}
+
+.page-footer__social {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.page-footer__social-heading {
+    color: #9a9d9d;
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-right: 2rem;
+}
+
+.page-footer__social-list {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem ;
+}
+
+.page-footer__social-link {
+    display: block;
+
+    
+}
+
+.page-footer__social-logo {
+    height: 2.4rem;
+    fill: black;
+    width: auto;
+}
