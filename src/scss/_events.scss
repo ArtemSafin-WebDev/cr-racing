@@ -2,13 +2,25 @@
     margin-bottom: 6rem;
     position: relative;
     z-index: 7;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 4rem;
+    }
 }
 
 .events__row {
-    display: grid;
-    align-items: flex-start;
-    grid-template-columns: 1fr 50rem;
-    grid-gap: 5rem;
+    @include breakpointMF(small-tablet) {
+        display: grid;
+        align-items: flex-start;
+        grid-template-columns: 1fr 50rem;
+        grid-gap: 5rem;
+    }
+
+    @include breakpoint(mobile) {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        grid-gap: 3rem;
+    }
 }
 
 .events__col {
@@ -17,34 +29,80 @@
 }
 
 .events__selected-event {
-   display: flex;
-   flex-direction: column;
+    @include breakpointMF(small-tablet) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    @include breakpoint(mobile) {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-gap: 2rem;
+        align-items: flex-start;
+    }
+}
+
+.events__selected-event-content {
+   
+
+
 }
 
 .events__selected-event-image-container {
-    position: relative;
-    border-radius: 3rem;
-    overflow: hidden;
-    backface-visibility: hidden;
-    transform: translateZ(0);
-    margin-bottom: 2rem;
-    &::before {
-        content: '';
-        padding-bottom: 56.25%;
-        display: block;
+    @include breakpointMF(small-tablet) {
+        position: relative;
+        border-radius: 3rem;
+        overflow: hidden;
+        backface-visibility: hidden;
+        transform: translateZ(0);
+        margin-bottom: 2rem;
+        &::before {
+            content: '';
+            padding-bottom: 56.25%;
+            display: block;
+        }
+
+        svg {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            fill: white;
+            width: 10rem;
+            height: 10rem;
+            z-index: 30;
+            transition: transform 0.3s;
+            filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.25));
+        }
     }
 
-    svg {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        fill: white;
-        width: 10rem;
-        height: 10rem;
-        z-index: 30;
-        transition: transform 0.3s;
-        filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.25));
+    @include breakpoint(mobile) {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-radius: 1rem;
+        overflow: hidden;
+        backface-visibility: hidden;
+        transform: translateZ(0);
+        margin: 0;
+
+        svg {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            fill: white;
+            width: 5.5rem;
+            height: 5.5rem;
+            z-index: 30;
+            transition: transform 0.3s;
+        }
+
+        &::before {
+            content: '';
+            display: block;
+            padding-bottom: 56.25%;
+        }
     }
 }
 
@@ -60,17 +118,49 @@
 .events__selected-event-title {
     font-size: 3rem;
     line-height: 1.2;
+
+    @include breakpoint(mobile) {
+        font-size: 1.9rem;
+    }
 }
 
 .events__other-events-list {
     display: flex;
     flex-direction: column;
-    grid-gap: 3.8rem;
+    gap: 3.8rem;
+
+    @include breakpoint(mobile) {
+        gap: 3rem;
+    }
 }
 
 .events__other-events-card {
     display: flex;
     align-items: flex-start;
+
+    @include breakpointMF(small-tablet) {
+        .icon-play {
+            display: none;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-gap: 2rem;
+        
+        .icon-play {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            fill: white;
+            width: 5.5rem;
+            height: 5.5rem;
+            z-index: 30;
+            transition: transform 0.3s;
+        }
+    }
 }
 
 .events__other-events-card-image-container {
@@ -82,6 +172,11 @@
     backface-visibility: hidden;
     transform: translateZ(0);
     margin-right: 2rem;
+
+    @include breakpoint(mobile) {
+        margin: 0;
+        width: 100%;
+    }
 
     &::before {
         content: '';
@@ -99,13 +194,21 @@
 }
 
 .events__other-events-card-content {
-    width: 40%;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+   
+
+    @include breakpointMF(small-tablet) {
+        width: 40%;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .events__other-events-card-title {
     font-size: 1.8rem;
     line-height: 1.2;
+
+    @include breakpoint(mobile) {
+        font-size: 1.8rem;
+    }
 }

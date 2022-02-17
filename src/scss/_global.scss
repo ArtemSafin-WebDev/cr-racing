@@ -12,6 +12,10 @@
     --content-padding: 6rem;
     --primary-color: #fe6100;
     --text-color: black;
+
+    @include breakpoint(mobile) {
+        --content-padding: 2.7rem;
+    }
 }
 
 html {
@@ -20,6 +24,12 @@ html {
     -webkit-text-size-adjust: 100%;
     font-size: clamp(4.2px, 0.56vw, 25px);
     @include noHighlight();
+
+
+    @include breakpoint(mobile) {
+        font-size: 10px;
+        font-size: clamp(4.2px, 2vw, 25px);
+    }
 }
 
 body {

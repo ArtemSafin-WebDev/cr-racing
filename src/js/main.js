@@ -20,6 +20,8 @@ import scheduleSlider from './scheduleSlider';
 import introSlider from './introSlider';
 import pilotsSlider from './pilotsSlider';
 import autoparkSlider from './autoparkSlider';
+import menu from './menu';
+import fancybox from './fancybox';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -42,7 +44,8 @@ document.addEventListener('DOMContentLoaded', function () {
     introSlider();
     pilotsSlider();
     autoparkSlider();
-
+    menu();
+    fancybox();
 });
 
 document.addEventListener('lazyloaded', () => {

@@ -1,6 +1,17 @@
 .page-footer {
     position: relative;
     z-index: 30;
+
+    .icon-long-arrow-right {
+        flex-shrink: 0;
+        width: 3rem;
+        height: 2rem;
+        fill: black;
+        margin-left: 2rem;
+        @include breakpointMF(small-tablet) {
+            display: none;
+        }
+    }
 }
 
 .page-footer__top-row {
@@ -8,22 +19,48 @@
     display: flex;
     align-items: center;
 
+    @include breakpoint(mobile) {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        margin-bottom: 0;
+    }
 }
 
 .page-footer__nav {
     margin-right: auto;
+
+    @include breakpoint(mobile) {
+        margin: 0;
+    }
 }
 
 .page-footer__nav-list {
     display: flex;
     align-items: center;
     gap: 5rem;
+
+    @include breakpoint(mobile) {
+        gap: 0;
+        flex-direction: column;
+        align-items: stretch;
+    }
 }
 .page-footer__nav-link {
     display: block;
     font-size: 1.7rem;
     line-height: 1.2;
     font-weight: 700;
+
+    @include breakpoint(mobile) {
+        display: flex;
+        align-items: center;
+        font-size: 1.9rem;
+        line-height: 1.2;
+        padding: 2rem 0;
+        border-bottom: 1px solid #d4d4d4;
+        justify-content: space-between;
+    }
 
     .no-touch &:hover,
     .touch &:active {
@@ -32,38 +69,65 @@
 }
 
 .page-footer__shop-link {
-    display: block;
-    font-size: 1.7rem;
-    line-height: 1.2;
-    font-weight: 700;
-    margin-right: 4.5rem;
-    .no-touch &:hover,
-    .touch &:active {
-        color: var(--primary-color);
+    @include breakpointMF(small-tablet) {
+        display: block;
+        font-size: 1.7rem;
+        line-height: 1.2;
+        font-weight: 700;
+        margin-right: 4.5rem;
+      
+        .no-touch &:hover,
+        .touch &:active {
+            color: var(--primary-color);
+        }
+    }
+
+    @include breakpoint(mobile) {
+        display: flex;
+        align-items: center;
+        font-size: 1.9rem;
+        line-height: 1.2;
+        padding: 2rem 0;
+        border-bottom: 1px solid #d4d4d4;
+        font-weight: 700;
+        justify-content: space-between;
     }
 }
 
 .page-footer__chemistry-link {
-    display: inline-flex;
-    align-items: center;
-    padding: 1.1rem 2.4rem;
-    font-size: 1.7rem;
-    line-height: 1.2;
-    font-weight: 700;
-    justify-content: center;
-    text-align: center;
-    background-color: black;
-    color: white;
-    border-radius: 3rem;
-    transition: background-color 0.2s, color 0.2s;
-    &:link,
-    &:visited {
+    @include breakpointMF(small-tablet) {
+        display: inline-flex;
+        align-items: center;
+        padding: 1.1rem 2.4rem;
+        font-size: 1.7rem;
+        line-height: 1.2;
+        font-weight: 700;
+        justify-content: center;
+        text-align: center;
+        background-color: black;
         color: white;
+        border-radius: 3rem;
+        transition: background-color 0.2s, color 0.2s;
+        &:link,
+        &:visited {
+            color: white;
+        }
+
+        .no-touch &:hover,
+        .touch &:active {
+            background-color: var(--primary-color);
+        }
     }
 
-    .no-touch &:hover,
-    .touch &:active {
-        background-color: var(--primary-color);
+    @include breakpoint(mobile) {
+        display: flex;
+        align-items: center;
+        font-size: 1.9rem;
+        line-height: 1.2;
+        padding: 2rem 0;
+        font-weight: 700;
+        border-bottom: 1px solid #d4d4d4;
+        justify-content: space-between;
     }
 }
 
@@ -71,6 +135,11 @@
     display: flex;
     align-items: center;
     margin-bottom: 8rem;
+    @include breakpoint(mobile) {
+        flex-direction: column;
+        align-items: stretch;
+        margin-bottom: 4.5rem;
+    }
 }
 
 .page-footer__copyright {
@@ -79,6 +148,12 @@
     line-height: 1.2;
     margin-right: 5rem;
     color: #9a9d9d;
+
+    @include breakpoint(mobile) {
+        font-size: 1.7rem;
+        margin-right: 0;
+        order: 15;
+    }
 }
 
 .page-footer__policy-link {
@@ -86,6 +161,12 @@
     font-size: 1.4rem;
     line-height: 1.2;
     color: #9a9d9d;
+
+    @include breakpoint(mobile) {
+        font-size: 1.9rem;
+        line-height: 1.2;
+        margin-bottom: 2rem;
+    }
 
     &:link,
     &:visited {
@@ -102,6 +183,15 @@
     margin-left: auto;
     display: flex;
     align-items: center;
+
+    @include breakpoint(mobile) {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        order: -1;
+        margin-bottom: 5rem;
+    }
 }
 
 .page-footer__social-heading {
@@ -109,22 +199,68 @@
     font-size: 1.4rem;
     font-weight: 500;
     margin-right: 2rem;
+
+    @include breakpoint(mobile) {
+        display: none;
+    }
 }
 
 .page-footer__social-list {
     display: flex;
     align-items: center;
-    gap: 1.5rem ;
+    gap: 1.5rem;
+
+    @include breakpoint(mobile) {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+}
+
+.page-footer__social-list-item {
+   
+   
 }
 
 .page-footer__social-link {
     display: block;
 
-    
+    @include breakpoint(mobile) {
+        display: flex;
+        align-items: center;
+        padding: 2rem 0;
+        border-bottom: 1px solid #d4d4d4;
+        font-weight: 700;
+        justify-content: space-between;
+        font-size: 1.9rem;
+        line-height: 1.2;
+    }
+
+    @include breakpointMF(small-tablet) {
+        transition: opacity .2s;
+        .no-touch &:hover,
+        .touch &:active {
+            opacity: 0.7;
+        }
+    }
 }
 
 .page-footer__social-logo {
     height: 2.4rem;
     fill: black;
     width: auto;
+
+    @include breakpoint(mobile) {
+        height: 2rem;
+        margin-left: 2rem;
+        flex-shrink: 0;
+    }
+}
+
+
+.page-footer__social-link-text {
+
+    @include breakpointMF(small-tablet) {
+        display: none;
+    }
 }

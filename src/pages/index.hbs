@@ -7,7 +7,12 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="intro__slider-card">
-                        <img src="img/intro-bg.png" alt="" class="intro__slider-card-image">
+
+
+                        <picture>
+                            <source srcset="img/mobile-intro-image.png" media="(max-width: 640px)">
+                            <img src="img/intro-bg.png" alt="MDN" class="intro__slider-card-image">
+                        </picture>
                         <div class="intro__slider-card-content">
                             <div class="container">
                                 <h3 class="intro__slider-card-title">
@@ -28,7 +33,10 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="intro__slider-card">
-                        <img src="img/intro-bg.png" alt="" class="intro__slider-card-image">
+                        <picture>
+                            <source srcset="img/mobile-intro-image.png" media="(max-width: 640px)">
+                            <img src="img/intro-bg.png" alt="MDN" class="intro__slider-card-image">
+                        </picture>
                         <div class="intro__slider-card-content">
                             <div class="container">
                                 <h3 class="intro__slider-card-title">
@@ -49,7 +57,10 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="intro__slider-card">
-                        <img src="img/intro-bg.png" alt="" class="intro__slider-card-image">
+                        <picture>
+                            <source srcset="img/mobile-intro-image.png" media="(max-width: 640px)">
+                            <img src="img/intro-bg.png" alt="MDN" class="intro__slider-card-image">
+                        </picture>
                         <div class="intro__slider-card-content">
                             <div class="container">
                                 <h3 class="intro__slider-card-title">
@@ -334,7 +345,11 @@
 </section>
 
 <section class="schedule js-schedule-slider">
-    <img src="img/events-bg.svg" alt="" class="schedule__bg">
+
+    <picture>
+        <source srcset="img/events-mobile-bg.svg" media="(max-width: 640px)">
+        <img src="img/events-bg.svg" alt="MDN" class="schedule__bg">
+    </picture>
     <div class="container">
         <div class="schedule__top-row">
             <h2 class="schedule__heading">
@@ -344,15 +359,29 @@
                 Смотреть эфир
             </a>
             <div class="schedule__tabs-nav">
-                <a href="#" class="schedule__tabs-nav-link">
-                    Все
-                </a>
-                <a href="#" class="schedule__tabs-nav-link">
-                    Rds GP
-                </a>
-                <a href="#" class="schedule__tabs-nav-link">
-                    Rds Europe
-                </a>
+                <button class="schedule__tabs-nav-mobile-btn">
+                    <span class="schedule__tabs-nav-mobile-btn-text">
+                        Все
+                    </span>
+
+                    <svg width="14" height="14" aria-hidden="true" class="icon-arrow-down">
+                        <use xlink:href="#arrow-down"></use>
+                    </svg>
+                </button>
+                <div class="schedule__tabs-nav-dropdown">
+                    <div class="schedule__tabs-nav-dropdown-inner">
+                        <a href="#" class="schedule__tabs-nav-link">
+                            Все
+                        </a>
+                        <a href="#" class="schedule__tabs-nav-link">
+                            Rds GP
+                        </a>
+                        <a href="#" class="schedule__tabs-nav-link">
+                            Rds Europe
+                        </a>
+                    </div>
+                </div>
+
             </div>
             <div class="schedule__arrows">
                 <button class="schedule__arrow schedule__arrow--prev">
@@ -1807,14 +1836,19 @@
                 <a href="#" class="events__selected-event">
                     <div class="events__selected-event-image-container">
                         <img src="img/selected-event.jpg" alt="" class="events__selected-event-image">
+
+
                         <svg width="14" height="14" aria-hidden="true" class="icon-play">
                             <use xlink:href="#play"></use>
                         </svg>
                     </div>
-                    <h3 class="events__selected-event-title">
-                        RDS GP: Дебютный сезон подходит к концу,
-                        6 этап, Мячково
-                    </h3>
+                    <div class="events__selected-event-content">
+                        <h3 class="events__selected-event-title">
+                            RDS GP: Дебютный сезон подходит к концу,
+                            6 этап, Мячково
+                        </h3>
+                    </div>
+
                 </a>
             </div>
             <div class="events__col">
@@ -1823,6 +1857,10 @@
                         <a href="#" class="events__other-events-card">
                             <div class="events__other-events-card-image-container">
                                 <img src="img/events/event-1.jpg" alt="" class="events__other-events-card-image">
+
+                                <svg width="14" height="14" aria-hidden="true" class="icon-play">
+                                    <use xlink:href="#play"></use>
+                                </svg>
                             </div>
                             <div class="events__other-events-card-content">
                                 <h3 class="events__other-events-card-title">
@@ -1836,6 +1874,9 @@
                         <a href="#" class="events__other-events-card">
                             <div class="events__other-events-card-image-container">
                                 <img src="img/events/event-2.jpg" alt="" class="events__other-events-card-image">
+                                <svg width="14" height="14" aria-hidden="true" class="icon-play">
+                                    <use xlink:href="#play"></use>
+                                </svg>
                             </div>
                             <div class="events__other-events-card-content">
                                 <h3 class="events__other-events-card-title">
@@ -1848,6 +1889,9 @@
                         <a href="#" class="events__other-events-card">
                             <div class="events__other-events-card-image-container">
                                 <img src="img/events/event-3.jpg" alt="" class="events__other-events-card-image">
+                                <svg width="14" height="14" aria-hidden="true" class="icon-play">
+                                    <use xlink:href="#play"></use>
+                                </svg>
                             </div>
                             <div class="events__other-events-card-content">
                                 <h3 class="events__other-events-card-title">
@@ -2100,7 +2144,12 @@
 </section>
 
 <section class="partners">
-    <img src="img/footer-bg.svg" alt="" class="partners__bg">
+    
+
+    <picture>
+        <source srcset="img/partners-mobile.svg" media="(max-width: 640px)">
+        <img src="img/footer-bg.svg" alt="MDN" class="partners__bg">
+    </picture>
     <div class="container">
         <h2 class="partners__heading">
             Партнёры

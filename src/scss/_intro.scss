@@ -1,4 +1,8 @@
 .intro {
+
+    @include breakpoint(mobile) {
+        margin-bottom: 4rem;
+    }
 }
 
 .intro__slider {
@@ -6,27 +10,46 @@
 }
 
 .intro__slider-pagination {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    right: 4.2rem;
-    top: 20rem;
-    z-index: 50;
-    gap: 1.2rem;
-    
+    @include breakpointMF(small-tablet) {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        right: 4.2rem;
+        top: 20rem;
+        z-index: 50;
+        gap: 1.2rem;
 
-    .swiper-pagination-bullet {
-        opacity: 1;
-        width: .8rem;
-        height: 1.4rem;
-        border-radius: 1rem;
-        background-color: rgba(white, 0.5);
-        flex-shrink: 0;
-        transition: width .2s, height .2s, background-color .2s;
+        .swiper-pagination-bullet {
+            opacity: 1;
+            width: 0.8rem;
+            height: 1.4rem;
+            border-radius: 1rem;
+            background-color: rgba(white, 0.5);
+            flex-shrink: 0;
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
 
-        &.swiper-pagination-bullet-active {
-            background-color: white;
-            height: 2.4rem;
+            &.swiper-pagination-bullet-active {
+                background-color: white;
+                height: 2.4rem;
+            }
+        }
+    }
+
+    @include breakpoint(mobile) {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        justify-content: center;
+        .swiper-pagination-bullet {
+            width: 1.5rem;
+            height: 0.7rem;
+            background-color: #585858;
+            border-radius: 0.5rem;
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+            &.swiper-pagination-bullet-active {
+                background-color: black;
+                width: 2.5rem;
+            }
         }
     }
 }
@@ -34,6 +57,10 @@
 .intro__slider-card {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
+
+    & > picture {
+        display: contents;
+    }
 }
 
 .intro__slider-card-image {
@@ -50,6 +77,10 @@
     padding-top: 9rem;
     padding-bottom: 9rem;
     color: white;
+
+    @include breakpoint(mobile) {
+        padding: 4rem 0;
+    }
 }
 
 .intro__slider-card-title {
@@ -57,6 +88,12 @@
     font-size: 5.5rem;
     line-height: 1.2;
     margin-bottom: 2rem;
+
+    @include breakpoint(mobile) {
+        font-size: 4.3rem;
+        line-height: 4.8rem;
+        margin-bottom: 1rem;
+    }
 }
 
 .intro__slider-card-text {
@@ -65,6 +102,12 @@
     line-height: 3.4rem;
     margin-bottom: 4rem;
     max-width: 36rem;
+
+    @include breakpoint(mobile) {
+        font-size: 2.4rem;
+        line-height: 3.3rem;
+        margin-bottom: 2rem;
+    }
 }
 
 .intro__slider-card-link {
@@ -80,6 +123,13 @@
     color: white;
     transition: background-color 0.2s, color 0.2s, border-color 0.2s;
 
+    @include breakpoint(mobile) {
+        font-size: 2.4rem;
+        line-height: 1.2;
+        padding: 1.9rem 4.4rem;
+        border-radius: 5rem;
+    }
+
     &:link,
     &:visited {
         color: white;
@@ -87,7 +137,8 @@
 
     .no-touch &:hover,
     .touch &:active {
-        background-color: white;
-        color: var(--primary-color);
+        background-color: black;
+        color: white;
+        border-color: black;
     }
 }

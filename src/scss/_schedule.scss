@@ -4,6 +4,11 @@
     position: relative;
     z-index: 1;
     color: white;
+
+    @include breakpoint(mobile) {
+        padding-top: 7rem;
+        margin-bottom: 14rem;
+    }
 }
 .schedule__bg {
     position: absolute;
@@ -19,6 +24,14 @@
     display: flex;
     align-items: center;
     margin-bottom: 3rem;
+
+    @include breakpoint(mobile) {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-gap: 2rem;
+        grid-template-areas: 'heading heading' 'watch categories';
+        margin-bottom: 4rem;
+    }
 }
 
 .schedule__heading {
@@ -26,27 +39,93 @@
     font-weight: 600;
     line-height: 1.2;
     margin-right: 2.7rem;
+
+    @include breakpoint(mobile) {
+        font-size: 3rem;
+        line-height: 1.2;
+        margin: 0;
+        grid-area: heading;
+    }
 }
 
 .schedule__watch-link {
     display: inline-flex;
     align-items: center;
     padding: 1.2rem 2.9rem;
-    border: 2px solid white;
+    border: 0.2rem solid white;
     font-weight: 700;
     font-size: 1.7rem;
     line-height: 1.2;
     flex-shrink: 0;
     margin-right: 3rem;
     border-radius: 3rem;
+    transition: border-color .2s, background-color .2s, color .2s;
+
+    .no-touch &:hover,
+    .touch &:active {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        color: white;
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 2.1rem;
+        line-height: 1.2;
+        padding: 1.1rem 2rem;
+        margin: 0;
+        grid-area: watch;
+        justify-self: flex-start;
+    }
 }
 
 .schedule__tabs-nav {
+    margin-left: auto;
+    margin-right: 4rem;
+
+    @include breakpoint(mobile) {
+        margin: 0;
+        align-self: flex-end;
+        position: relative;
+    }
+}
+
+.schedule__tabs-nav-dropdown {
+    @include breakpoint(mobile) {
+        position: absolute;
+        right: 0;
+        top: 100%;
+        width: max-content;
+        padding-top: 1rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s, visibility 0s linear 0.3s;
+        z-index: 60;
+
+        .mobile-dropdown-shown & {
+            opacity: 1;
+            visibility: inherit;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+    }
+}
+
+.schedule__tabs-nav-dropdown-inner {
     display: flex;
     align-items: center;
     gap: 4rem;
-    margin-left: auto;
-    margin-right: 4rem;
+
+    @include breakpoint(mobile) {
+        margin: 0;
+        gap: 3rem;
+        margin: 0;
+        background-color: #fff;
+        border-radius: 2rem;
+        flex-direction: column;
+        align-items: stretch;
+        color: black;
+        padding: 1.6rem;
+        gap: 2rem;
+    }
 }
 
 .schedule__tabs-nav-link {
@@ -60,13 +139,28 @@
         color: rgba(white, 0.5);
     }
 
-    .no-touch &:hover,
-    .touch &:active {
-        color: white;
+    .no-touch &:not(.active):hover,
+    .touch &:not(.active):active {
+        color: rgba(white, 0.7);
     }
 
     &.active {
         color: white;
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 2.1rem;
+        line-height: 1.2;
+        color: rgba(black, 0.5);
+        transition: color .2s, opacity .2s;
+        &:link,
+        &:visited {
+            color: rgba(black, 0.5);
+        }
+
+        &.active {
+            color: black;
+        }
     }
 }
 
@@ -76,6 +170,10 @@
     margin-left: 2rem;
     flex-shrink: 0;
     gap: 2.5rem;
+
+    @include breakpoint(mobile) {
+        display: none;
+    }
 }
 
 .schedule__arrow {
@@ -99,7 +197,6 @@
         pointer-events: none;
 
         svg {
-            
             fill: rgba(white, 0.5);
         }
     }
@@ -122,13 +219,13 @@
     width: 100%;
     height: auto;
     z-index: 5;
-    transition: opacity .4s ease, visibility .4s ease .4s;
+    transition: opacity 0.4s ease, visibility 0.4s ease 0.4s;
     opacity: 0;
     visibility: hidden;
     &.active {
         opacity: 1;
         visibility: inherit;
-        transition: opacity .4s, visibility .4s;
+        transition: opacity 0.4s, visibility 0.4s;
         position: relative;
         z-index: 10;
     }
@@ -141,6 +238,9 @@
 
     .swiper-slide {
         width: 20%;
+        @include breakpoint(mobile) {
+            width: 25rem;
+        }
     }
 }
 
@@ -153,7 +253,10 @@
     border-radius: 3rem;
     min-height: 40rem;
     color: black;
-    transition: box-shadow .2s;
+    transition: box-shadow 0.2s;
+
+    @include breakpoint(mobile) {
+    }
 
     &--past {
         opacity: 0.5;
@@ -166,8 +269,7 @@
 
     .no-touch &:hover,
     .touch &:active {
-       box-shadow: 0 1.4rem 5rem rgba(254, 97, 0, 0.7);
-          
+        box-shadow: 0 1.4rem 5rem rgba(254, 97, 0, 0.7);
     }
 }
 
@@ -249,13 +351,13 @@
 .schedule__slider-card-pilot {
     display: flex;
     align-items: center;
-    gap: .8rem;
+    gap: 0.8rem;
 }
 
 .schedule__slider-card-pilot-stats {
     display: flex;
     align-items: center;
-    gap: .3rem;
+    gap: 0.3rem;
     justify-content: flex-start;
 }
 
@@ -265,7 +367,7 @@
     justify-content: center;
     text-align: center;
     background-color: #e0e0e0;
-    padding: 0.4rem .8rem;
+    padding: 0.4rem 0.8rem;
     border-radius: 1.2rem;
     font-size: 1rem;
     line-height: 1.2;
@@ -285,7 +387,6 @@
         flex-direction: column;
         align-items: stretch;
     }
-    
 }
 
 .schedule__slider-card-pilot-image {
@@ -300,4 +401,31 @@
     font-weight: 600;
     font-size: 4.4rem;
     line-height: 1;
+}
+
+.schedule__tabs-nav-mobile-btn {
+    display: inline-flex;
+    align-items: center;
+    margin-left: auto;
+    background-color: #1a1a14;
+    font-size: 2.1rem;
+    line-height: 1.2;
+    padding: 1.1rem 2rem;
+    border: 0.2rem solid #1a1a14;
+    color: #565656;
+    font-weight: 700;
+    border-radius: 3rem;
+    svg {
+        width: 1.4rem;
+        height: 0.7rem;
+        fill: currentColor;
+        flex-shrink: 0;
+        margin-left: 1.5rem;
+        transition: transform 0.2s;
+        margin-top: 0.2rem;
+    }
+
+    @include breakpointMF(small-tablet) {
+        display: none;
+    }
 }

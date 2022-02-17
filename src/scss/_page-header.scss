@@ -3,6 +3,48 @@
     align-items: center;
     background-color: #fff;
     padding-right: 11rem;
+
+    @include breakpoint(mobile) {
+        padding-right: var(--content-padding);
+        justify-content: space-between;
+    }
+}
+
+.page-header__menu {
+    @include breakpointMF(small-tablet) {
+        width: 50%;
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+    }
+
+    @include breakpoint(mobile) {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+        z-index: 100;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.4s, visibility 0s linear 0.4s;
+        display: flex;
+        flex-direction: column;
+        padding: 0 var(--content-padding);
+        padding-top: 10rem;
+
+        .mobile-menu-open & {
+            opacity: 1;
+            visibility: inherit;
+            transition: opacity .4s, visibility .4s;
+        }
+
+      
+      
+    }
 }
 
 .page-header__logo {
@@ -14,6 +56,13 @@
     justify-content: center;
     margin-right: 10rem;
     background-color: var(--primary-color);
+
+    @include breakpoint(mobile) {
+        width: 11rem;
+        height: 7rem;
+        position: relative;
+        z-index: 120;
+    }
 }
 
 .page-header__logo-image {
@@ -23,18 +72,34 @@
 
 .page-header__nav {
     margin-right: auto;
+    @include breakpoint(mobile) {
+        margin: 0;
+        margin-bottom: 3rem;
+    }
 }
 
 .page-header__nav-list {
     display: flex;
     align-items: center;
     gap: 5.8rem;
+
+    @include breakpoint(mobile) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+    }
 }
 
 .page-header__nav-link {
     font-size: 1.9rem;
     line-height: 1.2;
     font-weight: 700;
+
+    @include breakpoint(mobile) {
+        font-size: 2.4rem;
+        line-height: 1.2;
+    }
 
     .no-touch &:hover,
     .touch &:active {
@@ -53,11 +118,27 @@
     .touch &:active {
         color: var(--primary-color);
     }
+
+    @include breakpoint(mobile) {
+        margin: 0;
+        font-size: 2.4rem;
+        margin-bottom: 3rem;
+        color: var(--primary-color);
+
+        &:link,
+        &:visited {
+            color: var(--primary-color);
+        }
+    }
 }
 
 .page-header__languages {
     position: relative;
     margin-right: 4rem;
+
+    @include breakpoint(mobile) {
+        margin: 0;
+    }
     &:hover {
         .page-header__languages-dropdown {
             opacity: 1;
@@ -75,6 +156,8 @@
     font-weight: 700;
     text-transform: uppercase;
 
+   
+
     svg {
         flex-shrink: 0;
         width: 0.8rem;
@@ -82,32 +165,66 @@
         fill: black;
         margin-left: 0.7rem;
     }
+
+    @include breakpoint(mobile) {
+        display: none;
+    }
 }
 
 .page-header__languages-dropdown {
-    position: absolute;
-    right: 0;
-    top: 100%;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0s linear 0.3s;
-    z-index: 40;
-    padding-top: 1rem;
+   
+
+    @include breakpointMF(small-tablet) {
+        position: absolute;
+        right: 0;
+        top: 100%;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s, visibility 0s linear 0.3s;
+        z-index: 40;
+        padding-top: 1rem;
+    }
 }
 
 .page-header__languages-dropdown-inner {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    background-color: #fff;
-    box-shadow: 0 0 1rem rgba(black, 0.1);
-    gap: 2rem;
+    
+
+    @include breakpointMF(small-tablet) {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        background-color: #fff;
+        box-shadow: 0 0 1rem rgba(black, 0.1);
+        gap: 2rem;
+    }
+
+    @include breakpoint(mobile) {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
 }
 
 .page-header__languages-dropdown-link {
     font-size: 1.9rem;
     line-height: 1.2;
     font-weight: 700;
+    .no-touch &:hover,
+    .touch &:active {
+        color: var(--primary-color);
+    }
+
+    &.active {
+        color: var(--primary-color);
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 2.4rem;
+        line-height: 1.2;
+        text-transform: uppercase;
+    }
+   
 }
 
 .page-header__chemistry {
@@ -118,9 +235,11 @@
     font-weight: 700;
     background-color: black;
     color: white;
-    padding: 1.6rem 3.8rem;
-    transition: background-color 0.2s, color 0.2s;
+    padding: 1.2rem 3.4rem;
+    transition: background-color 0.2s, color 0.2s, border-color .2s;;
     border-radius: 3rem;
+    border: .2rem solid black;
+   
     &:link,
     &:visited {
         color: white;
@@ -128,13 +247,50 @@
 
     .no-touch &:hover,
     .touch &:active {
-        background-color: var(--primary-color);
+        background-color: transparent;
+        color: black;
+    }
+
+    @include breakpoint(mobile) {
+        align-self: flex-start;
     }
 }
 
-.page-header__languages-dropdown-link {
-    .no-touch &:hover,
-    .touch &:active {
-        color: var(--primary-color);
+
+
+.page-header__burger {
+    position: relative;
+    z-index: 120;
+    @include breakpointMF(small-tablet) {
+        display: none;
+    }
+
+    @include breakpoint(mobile) {
+        display: inline-flex;
+        flex-direction: column;
+        flex-shrink: 0;
+        margin-left: 2rem;
+        & > span {
+            width: 4.4rem;
+            height: 0.4rem;
+            margin-bottom: 0.8rem;
+            background-color: #000;
+            border-radius: 0.5rem;
+            transition: transform .2s;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .mobile-menu-open & {
+            & > span {
+                &:nth-child(1) {
+                    transform: translateY(.6rem) rotate(45deg);
+                }
+                &:nth-child(2) {
+                    transform: translateY(-.6rem) rotate(-45deg);
+                }
+            }
+        }
     }
 }

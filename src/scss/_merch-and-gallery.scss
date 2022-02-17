@@ -1,29 +1,46 @@
 .merch-and-gallery {
     margin-bottom: 13rem;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 7rem;
+    }
 }
 
 .merch-and-gallery__row {
    display: flex;
    align-items: flex-start;
+
+   @include breakpoint(mobile) {
+       flex-direction: column;
+       align-items: stretch;
+       gap: 5rem;
+   }
    
 }
 
 .merch-and-gallery__col {
-    &:nth-child(1) {
-        width: 50%;
-        flex-grow: 1;
+    @include breakpointMF(small-tablet) {
+        &:nth-child(1) {
+            width: 50%;
+            flex-grow: 1;
+        }
+        &:nth-child(2) {
+            width: 50rem;
+            margin-left: 5rem;
+            
+        }
     }
-    &:nth-child(2) {
-        width: 50rem;
-        margin-left: 5rem;
-        
-    }
+   
 }
 
 .merch-and-gallery__slider-top-row {
     display: flex;
     align-items: center;
     margin-bottom: 3rem;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 2rem;
+    }
 }
 
 .merch-and-gallery__slider-heading {
@@ -32,6 +49,13 @@
     line-height: 1.2;
     width: 50%;
     flex-grow: 1;
+
+    @include breakpoint(mobile) {
+        font-size: 3rem;
+        width: 100%;
+        flex-grow: 0;
+        
+    }
 }
 
 .merch-and-gallery__slider-arrows {
@@ -40,6 +64,10 @@
     margin-left: 2rem;
     flex-shrink: 0;
     gap: 2.5rem;
+
+    @include breakpoint(mobile) {
+        display: none;
+    }
 }
 
 
@@ -88,6 +116,10 @@
     transform: translateZ(0);
     background-color: #fff;
     margin-bottom: 2rem;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 1.5rem;
+    }
     &::before {
         content: '';
         display: block;
@@ -110,13 +142,39 @@
    
     font-size: 1.8rem;
     line-height: 1.2;
+
+    @include breakpoint(mobile) {
+        font-size: 1.9rem;
+    }
 }
 
 .merch-and-gallery__slider--merch {
     .swiper-slide {
         width: 50%;
+
+        @include breakpoint(mobile) {
+            width: 25rem;
+        }
+    }
+
+    .swiper-container {
+        @include breakpoint(mobile) {
+            overflow: visible;
+        }
     }
 }
+
+.merch-and-gallery__slider--gallery {
+    @include breakpoint(mobile) {
+        .swiper-slide {
+            width: 25rem;
+        }
+
+        .swiper-container {
+            overflow: visible;
+        }
+    }
+} 
 
 .merch-and-gallery__gallery-card-image-container {
     position: relative;
@@ -127,6 +185,10 @@
     background-color: #fff;
     margin-bottom: 2rem;
 
+    @include breakpoint(mobile) {
+        margin-bottom: 1.5rem;
+    }
+
     svg {
         position: absolute;
         z-index: 40;
@@ -135,11 +197,22 @@
         top: 3.2rem;
         width: 4.5rem;
         height: 3.2rem;
+
+        @include breakpoint(mobile) {
+            width: 3rem;
+            height: 3rem;
+            right: 2.5rem;
+            top: 2.5rem;
+        }
     }
     &::before {
         content: '';
         display: block;
         padding-bottom: 77%;
+
+        @include breakpoint(mobile) {
+            padding-bottom: 100%;
+        }
     }
 }
 
@@ -157,4 +230,8 @@
 .merch-and-gallery__gallery-card-title {
     font-size: 1.8rem;
     line-height: 1.2;
+
+    @include breakpoint(mobile) {
+        font-size: 1.9rem;
+    }
 }

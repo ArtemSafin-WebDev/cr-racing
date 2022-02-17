@@ -10,11 +10,18 @@ export default function pilotsSlider() {
 
         new Swiper(container, {
             watchOverflow: true,
-            spaceBetween: 30,
-            slidesPerView: 2,
+            spaceBetween: 24,
+            slidesPerView: 'auto',
             navigation: {
                 nextEl: element.querySelector('.pilots-and-autopark__arrow--next'),
                 prevEl: element.querySelector('.pilots-and-autopark__arrow--prev')
+            },
+            breakpoints: {
+                641: {
+                    slidesPerView: 2,
+                    spaceBetween: 30,
+                }
+
             }
         });
     });

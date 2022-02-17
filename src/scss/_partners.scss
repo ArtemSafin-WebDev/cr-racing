@@ -2,6 +2,10 @@
     margin-bottom: 15rem;
     position: relative;
     z-index: 1;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 10rem;
+    }
 }
 
 .partners__bg {
@@ -12,6 +16,11 @@
     height: auto;
     z-index: -1;
     pointer-events: none;
+
+    @include breakpoint(mobile) {
+        top: auto;
+        bottom: -14rem;
+    }
 }
 
 .partners__heading {
@@ -20,6 +29,11 @@
     font-weight: 700;
     color: #e2e2e2;
     margin-bottom: 5.5rem;
+
+    @include breakpoint(mobile) {
+        font-size: 6.8rem;
+        margin-bottom: 5rem;
+    }
 }
 
 .partners__list {
@@ -27,12 +41,28 @@
     grid-template-columns: repeat(5, minmax(0, 1fr));
     grid-gap: 3rem;
     grid-row-gap: 5.5rem;
+
+    @include breakpoint(mobile) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        row-gap: 2rem;
+        justify-content: center;
+    }
+}
+
+.partners__list-item {
+    @include breakpoint(mobile) {
+        width: calc(33.33% - 1rem);
+    }
 }
 
 .partners__card {
     display: flex;
     flex-direction: column;
     text-align: center;
+
+    
 }
 
 .partners__card-logo {
@@ -41,10 +71,18 @@
     object-fit: contain;
     object-position: center;
     margin-bottom: 3rem;
+
+    @include breakpoint(mobile) {
+        margin: 0;
+        height: 5rem;
+    }
 }
 
 .partners__card-title {
     font-size: 1.2rem;
     line-height: 1.4;
     color: #9a9d9d;
+    @include breakpoint(mobile) {
+        display: none;
+    }
 }
