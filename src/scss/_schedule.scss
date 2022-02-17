@@ -400,7 +400,11 @@
 .schedule__slider-card-date {
     font-weight: 600;
     font-size: 4.4rem;
-    line-height: 1;
+    line-height: .8;
+}
+
+.schedule__slider-card-date-month {
+    font-size: 3.4rem;
 }
 
 .schedule__tabs-nav-mobile-btn {

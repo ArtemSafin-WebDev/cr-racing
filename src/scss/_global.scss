@@ -7,7 +7,7 @@
 }
 
 :root {
-    --max-container-width: 134.6rem;
+    --max-container-width: 135rem;
     --tt-hoves: 'TT Hoves', sans-serif;
     --content-padding: 6rem;
     --primary-color: #fe6100;
@@ -22,8 +22,13 @@ html {
     box-sizing: border-box;
     font-size: 10px;
     -webkit-text-size-adjust: 100%;
-    font-size: clamp(4.2px, 0.56vw, 25px);
+    font-size: clamp(4.2px, 0.59vw, 25px);
     @include noHighlight();
+
+
+    // @media screen and (max-width: 1680px) {
+    //     font-size: clamp(4.2px, 0.62vw, 25px);
+    // }
 
 
     @include breakpoint(mobile) {

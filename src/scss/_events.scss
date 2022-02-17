@@ -3,12 +3,36 @@
     position: relative;
     z-index: 7;
 
+  
+
     @include breakpoint(mobile) {
         margin-bottom: 4rem;
     }
 }
 
 .events__row {
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        content: '';
+        position: absolute;
+       
+        top: 2rem;
+        width: 60rem;
+        height: 60rem;
+        right: 15rem;
+        background-image: url('../img/clouds.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: -1;
+        pointer-events: none;
+
+        @include breakpoint(mobile) {
+            display: none;
+        }
+    }
     @include breakpointMF(small-tablet) {
         display: grid;
         align-items: flex-start;
