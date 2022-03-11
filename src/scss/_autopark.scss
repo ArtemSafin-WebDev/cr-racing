@@ -1,0 +1,369 @@
+.autopark {
+    position: relative;
+    z-index: 1;
+    padding-top: 2.7rem;
+    padding-bottom: 22rem;
+
+    @include breakpoint(mobile) {
+        padding: 4rem 0;
+        padding-bottom: 9rem;
+    }
+}
+
+.autopark__bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    pointer-events: none;
+
+    @include breakpoint(mobile) {
+        left: 50%;
+        width: 150%;
+        transform: translateX(-50%);
+        max-width: none;
+    }
+}
+
+.autopark__breadcrumbs {
+    margin-bottom: 4.5rem;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 3rem;
+    }
+}
+
+.autopark__heading {
+    font-weight: 600;
+    font-size: 5.5rem;
+    line-height: 1.2;
+    margin-bottom: 3.5rem;
+    color: white;
+
+    @include breakpoint(mobile) {
+        font-size: 4.3rem;
+        line-height: 4.8rem;
+        margin-bottom: 1rem;
+        margin-bottom: 3rem;
+        br {
+            display: none;
+        }
+    }
+}
+
+.autopark__list {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-gap: 4.5rem;
+
+    @include breakpoint(mobile) {
+        grid-gap: 2rem;
+    }
+}
+
+.autopark__card {
+    position: relative;
+    border-radius: 2rem;
+    overflow: hidden;
+    color: white;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+
+    @include breakpoint(mobile) {
+       
+        border-radius: 2.5rem;
+    }
+    &:link,
+    &:visited {
+        color: white;
+    }
+    &::before {
+        content: '';
+        display: block;
+        padding-bottom: 52%;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+
+        @include breakpoint(mobile) {
+            padding-bottom: 70%;
+        }
+    }
+}
+
+.autopark__card-content {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    display: grid;
+    padding: 5.8rem;
+    grid-template-columns: minmax(0, 16rem) 1fr auto;
+    grid-template-areas: 'title title pilot' 'engine specs pilot' 'engine specs small-car';
+    grid-row-gap: 3.5rem;
+    grid-column-gap: 3rem;
+
+    @include breakpoint(mobile) {
+        padding: 3.5rem;
+        grid-template-areas: 'title' 'engine';
+    }
+}
+
+.autopark__card-large-car {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    object-fit: cover;
+}
+
+.autopark__card-title {
+    font-size: 5.5rem;
+    line-height: 1.2;
+    font-weight: 600;
+    grid-area: title;
+
+    @include breakpoint(mobile) {
+        font-size: 2rem;
+    }
+    span {
+        font-size: 7rem;
+        padding-left: 3.4rem;
+        display: block;
+        margin-top: -1rem;
+
+        @include breakpoint(mobile) {
+            font-size: 2.3rem;
+            line-height: 1.2;
+            margin-top: 0rem;
+            padding-left: 1rem;
+        }
+    }
+}
+
+.autopark__card-engine-specs {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    grid-area: engine;
+
+    @include breakpoint(mobile) {
+        align-self: flex-end;
+        justify-self: flex-start;
+    }
+}
+
+.autopark__card-engine-specs-title-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    @include breakpoint(mobile) {
+        display: none;
+    }
+}
+
+.autopark__card-engine-specs-title {
+    font-weight: 600;
+    font-size: 1.8rem;
+    line-height: 1.2;
+}
+
+.autopark__card-engine-specs-model {
+    font-weight: 600;
+    font-size: 3.4rem;
+    line-height: 1.2;
+}
+
+.autopark__card-engine-specs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    @include breakpoint(mobile) {
+        gap: 1.5rem;
+    }
+}
+
+.autopark__card-engine-specs-card {
+   
+
+    @include breakpointMF(small-tablet) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.4rem;
+    }
+
+    @include breakpoint(mobile) {
+        flex-direction: row;
+        align-items: center;
+        display: flex;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+}
+
+.autopark__card-engine-specs-card-units {
+  
+    @include breakpointMF(small-tablet) {
+        font-size: 1.8rem;
+        line-height: 1.2;
+        font-weight: 600;
+        gap: 1rem;
+        align-self: flex-end;
+        text-align: right;
+    
+    }
+
+    @include breakpoint(mobile) {
+        order: 10;
+        margin-left: 0.4rem;
+
+    }
+}
+
+.autopark__card-engine-specs-card-amount {
+ 
+    @include breakpointMF(small-tablet) {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-weight: 600;
+        font-size: 3.4rem;    
+    }
+
+    @include breakpoint(mobile) {
+        display: contents;
+    }
+}
+
+.autopark__card-engine-specs-card-amount-icon {
+    width: 3rem;
+    height: 3rem;
+    object-fit: contain;
+    flex-shrink: 0;
+
+    @include breakpoint(mobile) {
+        width: 2rem;
+        height: 2rem;
+        margin-right: 1.2rem;
+    }
+}
+
+.autopark__card-engine-specs-card-desc {
+    font-weight: 600;
+    font-size: 1.8rem;
+
+    @include breakpoint(mobile) {
+        display: none;
+    }
+
+    
+}
+
+.autopark__card-specs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    grid-area: specs;
+    padding-top: 0.5rem;
+
+    @include breakpoint(mobile) {
+        display: none;
+    }
+}
+
+.autopark__card-engine-specs-list-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include breakpoint(mobile) {
+        align-items: stretch;
+    }
+}
+
+.autopark__card-specs-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.autopark__card-specs-card-key {
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.2;
+}
+
+.autopark__card-specs-card-value {
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    color: #c9cbc3;
+}
+
+.autopark__card-pilot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 10rem;
+    grid-area: pilot;
+    justify-self: flex-end;
+    align-self: flex-start;
+    margin-top: 1rem;
+
+    @include breakpoint(mobile) {
+        display: none;
+    }
+}
+
+.autopark__card-pilot-photo-container {
+    width: 100%;
+    position: relative;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    &::before {
+        content: '';
+        display: block;
+        padding-bottom: 100%;
+    }
+}
+
+.autopark__card-pilot-photo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.autopark__card-pilot-name {
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+}
+
+.autopark__card-small-car {
+    height: 10rem;
+    width: auto;
+    object-fit: contain;
+    object-position: right center;
+    grid-area: small-car;
+    align-self: flex-end;
+    justify-self: flex-end;
+
+    @include breakpoint(mobile) {
+        display: none;
+    }
+}
