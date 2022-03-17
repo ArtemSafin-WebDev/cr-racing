@@ -22,6 +22,8 @@ import pilotsSlider from './pilotsSlider';
 import autoparkSlider from './autoparkSlider';
 import menu from './menu';
 import fancybox from './fancybox';
+import teamPilotsSlider from './teamPilotsSlider';
+import successSlider from './successSlider';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -46,6 +48,9 @@ document.addEventListener('DOMContentLoaded', function () {
     autoparkSlider();
     menu();
     fancybox();
+    teamPilotsSlider();
+    successSlider();
+    
 });
 
 document.addEventListener('lazyloaded', () => {

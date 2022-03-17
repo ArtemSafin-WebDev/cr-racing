@@ -1,0 +1,655 @@
+.team {
+    position: relative;
+    z-index: 1;
+    padding-top: 8.5rem;
+    padding-bottom: 10rem;
+
+    @include breakpoint(mobile) {
+        padding-top: 5rem;
+        padding-bottom: 7rem;
+    }
+}
+
+.team__bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+
+    @include breakpoint(mobile) {
+        width: 250%;
+        height: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: none;
+    }
+}
+
+.team__heading {
+    font-weight: 600;
+    font-size: 5.5rem;
+    line-height: 1.2;
+    margin-bottom: 3.5rem;
+    color: white;
+
+    @include breakpoint(mobile) {
+        font-size: 4.3rem;
+        line-height: 4.8rem;
+        margin-bottom: 1rem;
+        margin-bottom: 3rem;
+        br {
+            display: none;
+        }
+    }
+}
+
+.team__heading-text {
+    font-weight: 500;
+    font-size: 2.5rem;
+    line-height: 3.4rem;
+    max-width: 42rem;
+    margin-bottom: 3.5rem;
+    color: white;
+    @include breakpoint(mobile) {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+}
+
+.team__history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+    margin-bottom: 5rem;
+
+    @include breakpoint(mobile) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-gap: 2rem;
+        margin-bottom: 3rem;
+        display: grid;
+    }
+}
+
+.team__history-list-item {
+    position: relative;
+    padding-left: 5rem;
+
+    @include breakpoint(mobile) {
+        padding-left: 3rem;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 1.5rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        background-color: var(--primary-color);
+
+        @include breakpoint(mobile) {
+            width: 1.5rem;
+            height: 1.5rem;
+            top: 1.5rem;
+        }
+    }
+}
+
+.team__history-card {
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.team__history-card-amount {
+    font-weight: 600;
+    font-size: 4.5rem;
+    line-height: 1.2;
+
+    @include breakpoint(mobile) {
+        font-size: 3.6rem;
+    }
+}
+
+.team__history-card-text {
+    font-weight: 600;
+    font-size: 2.6rem;
+    line-height: 1.2;
+    @include breakpoint(mobile) {
+        font-size: 1.8rem;
+    }
+}
+
+.team__top-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 10rem;
+    margin-bottom: 9rem;
+
+    @include breakpoint(mobile) {
+        grid-template-columns: minmax(0, 1fr);
+        grid-gap: 5rem;
+        margin-bottom: 5rem;
+    }
+}
+
+.team__video {
+    display: flex;
+    flex-direction: column;
+}
+
+.team__video-image-container {
+    position: relative;
+    border-radius: 2rem;
+    overflow: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    margin-bottom: 2rem;
+    svg {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 8rem;
+        height: 8rem;
+        fill: white;
+    }
+    &::before {
+        content: '';
+        display: block;
+        padding-bottom: 56.25%;
+    }
+}
+
+.team__video-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team__video-heading {
+    color: black;
+    font-weight: 700;
+    font-size: 2.2rem;
+    line-height: 2.4rem;
+}
+
+.team__top-text {
+    font-weight: 600;
+    font-size: 2.9rem;
+    line-height: 4.2rem;
+    margin-top: 4.5rem;
+
+    @include breakpoint(mobile) {
+        margin-top: 0;
+        font-size: 2.6rem;
+        line-height: 1.3;
+    }
+}
+
+.team__success-story {
+    margin-bottom: 9rem;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 5rem;
+    }
+}
+
+.team__success-story-heading {
+    font-weight: 600;
+    font-size: 2.9rem;
+    line-height: 1.2;
+    margin-bottom: 2.5rem;
+
+    @include breakpoint(mobile) {
+        font-size: 3rem;
+        line-height: 1.2;
+        margin: 0;
+        margin-bottom: 3rem;
+    }
+}
+
+.team__success-story-slider {
+    .swiper-container {
+        overflow: visible;
+    }
+
+    .swiper-slide {
+        @include breakpoint(mobile) {
+            width: 24rem;
+        }
+    }
+}
+
+.team__success-story-list {
+    @include breakpointMF(small-tablet) {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        grid-gap: 2rem;
+    }
+}
+
+.team__success-story-list-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.team__success-story-card {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: #fff;
+    border-radius: 2rem;
+    padding: 2.5rem;
+}
+
+.team__success-story-card-year {
+    margin-bottom: 3.5rem;
+}
+
+.team__success-story-card-year-date {
+    font-weight: 600;
+    font-size: 3.8rem;
+    line-height: 1;
+}
+
+.team__success-story-card-year-text {
+    font-weight: 600;
+    font-size: 3.2rem;
+    line-height: 1.2;
+}
+
+.team__success-story-card-text {
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+
+    p {
+        margin-bottom: 1.8rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    b {
+        font-weight: 600;
+    }
+}
+
+.team__goal {
+    position: relative;
+    z-index: 2;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 5rem;
+    }
+}
+
+.team__goal-bg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    pointer-events: none;
+
+    @include breakpoint(mobile) {
+        display: none;
+    }
+}
+
+.team__goal-content {
+    min-height: 64rem;
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 0;
+
+    @include breakpoint(mobile) {
+        min-height: auto;
+        padding: 0;
+    }
+}
+
+.team__goal-text {
+    margin: auto 0;
+    max-width: 50rem;
+    font-weight: 600;
+    color: white;
+    font-size: 2.9rem;
+    line-height: 4.2rem;
+    margin-left: 3.5rem;
+
+    @include breakpoint(mobile) {
+        font-size: 2.6rem;
+        line-height: 1.3;
+        color: black;
+        margin: 0;
+    }
+}
+
+.team__our-pilots {
+    @include breakpointMF(small-tablet) {
+        position: relative;
+        z-index: 1;
+        color: white;
+        background-color: #28281e;
+        margin-top: -6rem;
+        margin-bottom: 8rem;
+    }
+
+    @include breakpoint(mobile) {
+        margin-bottom: 7rem;
+    }
+}
+
+.team__our-pilots-heading {
+    font-weight: 600;
+    font-size: 2.9rem;
+    line-height: 1.2;
+    margin-bottom: 7rem;
+
+    @include breakpoint(mobile) {
+        font-size: 3rem;
+        line-height: 1.2;
+        margin: 0;
+        margin-bottom: 3.5rem;
+    }
+}
+
+.team__our-pilots-content {
+    padding-top: 8.5rem;
+    position: relative;
+
+    @include breakpoint(mobile) {
+        padding: 0;
+    }
+}
+
+.team__our-pilots-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+
+    @include breakpoint(mobile) {
+        display: none;
+    }
+}
+
+.team__our-pilots-slider {
+    .swiper-container {
+        overflow: visible;
+    }
+
+    .swiper-slide {
+        width: 20%;
+
+        @include breakpoint(mobile) {
+            width: 32rem;
+        }
+    }
+}
+
+.team__our-pilots-slider-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    z-index: 1;
+    min-height: 23rem;
+
+    .no-touch &:hover {
+        .team__our-pilots-slider-card-arrow {
+            background-color: white;
+            svg {
+                fill: var(--primary-color);
+            }
+        }
+    }
+}
+
+.team__our-pilots-slider-card-image {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: auto;
+    max-width: 100%;
+    height: 27rem;
+    z-index: -1;
+    object-fit: contain;
+    object-position: center bottom;
+
+    @include breakpoint(mobile) {
+        height: 23rem;
+    }
+}
+
+.team__our-pilots-slider-card-content {
+    grid-column: 1/ 2;
+    grid-row: 1 / 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.team__our-pilots-slider-card-number {
+    font-weight: 700;
+    font-size: 4.8rem;
+    line-height: 0.9;
+    margin-bottom: 1.6rem;
+}
+
+.team__our-pilots-slider-card-name {
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-bottom: 0.7rem;
+    text-transform: uppercase;
+}
+
+.team__our-pilots-slider-card-league {
+    font-weight: 300;
+    font-size: 0.9rem;
+    line-height: 1.2;
+    color: rgba(white, 0.6);
+    margin-bottom: 2.5rem;
+
+    @include breakpoint(mobile) {
+        color: rgba(black, 0.6);
+    }
+}
+
+.team__our-pilots-slider-card-arrow {
+    width: 3.2rem;
+    height: 3.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid white;
+    transition: background-color 0.2s;
+
+    @include breakpoint(mobile) {
+        border-color: black;
+    }
+
+    svg {
+        width: 0.7rem;
+        height: 1.2rem;
+        fill: white;
+        transition: fill 0.2s;
+
+        @include breakpoint(mobile) {
+            fill: black;
+        }
+    }
+}
+
+.team__awards-heading {
+    font-weight: 600;
+    font-size: 2.9rem;
+    line-height: 1.2;
+    margin-bottom: 2.5rem;
+
+    @include breakpoint(mobile) {
+        font-size: 3rem;
+        line-height: 1.2;
+        margin: 0;
+        margin-bottom: 3rem;
+    }
+}
+
+.team__awards-slider {
+    .swiper-container {
+        overflow: visible;
+    }
+
+    .swiper-wrapper {
+        @include breakpointMF(small-tablet) {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            grid-gap: 2rem;
+        }
+    }
+
+    .swiper-slide {
+        @include breakpoint(mobile) {
+            width: 24rem;
+        }
+    }
+}
+
+.team__awards-slider-card {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: #fff;
+    border-radius: 2rem;
+    overflow: hidden;
+    padding: 2rem;
+    text-align: center;
+}
+
+.team__awards-slider-card-image-container {
+    position: relative;
+    margin-bottom: 2.5rem;
+    &::before {
+        content: '';
+        display: block;
+        padding-bottom: 100%;
+    }
+}
+
+.team__awards-slider-card-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.team__awards-slider-card-name {
+    font-weight: 600;
+    font-size: 1.7rem;
+    line-height: 2rem;
+    margin-bottom: 1.7rem;
+}
+
+.team__awards-slider-card-text {
+    font-weight: 500;
+    font-size: 1.3rem;
+    line-height: 2rem;
+}
+
+.team__tech-specs {
+    margin-bottom: 7rem;
+}
+
+.team__tech-specs-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    @include breakpoint(mobile) {
+        grid-template-columns: minmax(0, 1fr);
+        grid-gap: 0;
+    }
+}
+
+.team__tech-specs-list-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.team__tech-specs-card {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    position: relative;
+    z-index: 1;
+    min-height: 27rem;
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+}
+
+.team__tech-specs-card-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: contain;
+    object-position: center bottom;
+}
+
+.team__tech-specs-card-title {
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    width: min-content;
+
+    @include breakpoint(mobile) {
+        font-size: 1.8rem;
+    }
+}
+
+.team__tech-specs-card-text {
+    font-weight: 500;
+    font-size: 1.3rem;
+    line-height: 1.6rem;
+    max-width: 13rem;
+
+    @include breakpoint(mobile) {
+        max-width: 15rem;
+        font-size: 1.5rem;
+        line-height: 1.2;
+    }
+    p {
+        margin-bottom: 1.3rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.team__tech-specs-heading {
+    font-weight: 600;
+    font-size: 2.9rem;
+    line-height: 1.2;
+    margin-bottom: 2.5rem;
+
+    @include breakpoint(mobile) {
+        font-size: 3rem;
+        line-height: 1.2;
+        margin: 0;
+    }
+}
