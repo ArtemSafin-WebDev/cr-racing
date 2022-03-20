@@ -24,6 +24,8 @@ import menu from './menu';
 import fancybox from './fancybox';
 import teamPilotsSlider from './teamPilotsSlider';
 import successSlider from './successSlider';
+import results from './results';
+import resultsShowMore from './resultsShowMore';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -50,6 +52,8 @@ document.addEventListener('DOMContentLoaded', function () {
     fancybox();
     teamPilotsSlider();
     successSlider();
+    results();
+    resultsShowMore();
     
 });
 
