@@ -1,0 +1,427 @@
+{{#extend "layout"}}
+{{#content "main"}}
+
+
+
+<section class="contacts">
+    <img src="img/autopark-rainbow.png" alt="" class="contacts__bg">
+    <div class="container">
+
+        <h1 class="contacts__heading">
+            Контактная информация
+        </h1>
+        <div class="contacts__row contacts__row--centered">
+            <div class="contacts__col">
+                <ul class="contacts__info-list">
+                    <li class="contacts__info-list-item">
+                        <div class="contacts__info-card">
+                            <h3 class="contacts__info-card-title">
+                                Адрес:
+                            </h3>
+                            <div class="contacts__info-card-text">
+                                <p>
+                                    Санкт-Петербург,<br>
+                                    Московское шоссе, 177 к.2 лит. Ж
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="contacts__info-list-item">
+                        <div class="contacts__info-card">
+                            <h3 class="contacts__info-card-title">
+                                Адрес для корреспонденции:
+                            </h3>
+                            <div class="contacts__info-card-text">
+                                <p>
+                                    192 102, Санкт-Петербург, а/я 210, <br>
+                                    до востребования
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="contacts__info-list-item">
+                        <div class="contacts__info-card">
+                            <h3 class="contacts__info-card-title">
+                                Адрес для корреспонденции:
+                            </h3>
+                            <div class="contacts__info-card-text">
+                                <p>
+                                    <a href="mailto:region@carville.ru">
+                                        region@carville.ru
+                                    </a>
+                                </p>
+                            </div>
+                            <div class="contacts__info-card-link-row">
+                                <a href="tel:+78123362393" class="contacts__info-card-link">
+                                    +7 812 336-23-93
+                                </a>
+                                <div class="contacts__info-card-link-additional">
+                                    доб. 158
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li class="contacts__info-list-item">
+                        <div class="contacts__info-card">
+                            <h3 class="contacts__info-card-title">
+                                Команда в социальных сетях:
+                            </h3>
+                            <div class="contacts__info-social">
+                                <ul class="contacts__info-social-list">
+                                    <li class="contacts__info-social-list-item">
+                                        <a href="#" class="contacts__info-social-link">
+                                            <img src="img/instagram.svg" alt="" class="contacts__info-social-link-logo">
+                                        </a>
+                                    </li>
+                                    <li class="contacts__info-social-list-item">
+                                        <a href="#" class="contacts__info-social-link">
+                                            <img src="img/vk.svg" alt="" class="contacts__info-social-link-logo">
+                                        </a>
+                                    </li>
+                                    <li class="contacts__info-social-list-item">
+                                        <a href="#" class="contacts__info-social-link">
+                                            <img src="img/youtube.svg" alt="" class="contacts__info-social-link-logo">
+                                        </a>
+                                    </li>
+                                    <li class="contacts__info-social-list-item">
+                                        <a href="#" class="contacts__info-social-link">
+                                            <img src="img/fb.svg" alt="" class="contacts__info-social-link-logo">
+                                        </a>
+                                    </li>
+                                    <li class="contacts__info-social-list-item">
+                                        <a href="#" class="contacts__info-social-link">
+                                            <img src="img/drive.svg" alt="" class="contacts__info-social-link-logo">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="contacts__info-card-link-row">
+                                <a href="#" class="contacts__info-card-link">
+                                    <svg width="14" height="14" aria-hidden="true" class="icon-pilots-telegram">
+                                        <use xlink:href="#pilots-telegram"></use>
+                                    </svg>
+                                    Подписаться
+                                </a>
+
+                            </div>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="contacts__col">
+                <div class="contacts__cards">
+                    <div class="contacts__card">
+                        <img src="img/contact-card-1.png" alt=""
+                            class="contacts__card-image contacts__card-image--girls">
+                        <div class="contacts__card-content">
+                            <h4 class="contacts__card-title">
+                                Хотите стать партнёром
+                                гоночной команды CR?
+                            </h4>
+                            <a href="#contacts-modal" class="contacts__card-link js-open-modal">
+                                Отправить заявку
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contacts__card">
+                        <img src="img/contact-card-2.png" alt="" class="contacts__card-image contacts__card-image--car">
+                        <div class="contacts__card-content">
+                            <h4 class="contacts__card-title">
+                                Хотите стать партнёром
+                                гоночной команды CR?
+                            </h4>
+                            <form action="/" method="POST" class="contacts__card-form" data-need-validation="" id="subscription-form">
+                                <div class="contacts__card-form-row">
+                                    <input type="email" name="email" class="contacts__card-form-input"
+                                        placeholder="E-mail" required="" data-parsley-errors-container="#subscription-form">
+                                    <div class="contacts__card-form-half-circle"></div>
+                                    <button class="contacts__card-form-submit" type="submit">
+                                        Подписаться
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contacts__row">
+            <div class="contacts__col">
+                <form action="/" method="POST" class="contacts__form" data-need-validation="">
+                    <h3 class="contacts__form-heading">
+                        Напишите нам
+                    </h3>
+                    <div class="contacts__form-fields">
+
+
+                        <div class="contacts__form-field">
+                            <label class="contacts__form-label">
+                                <span class="contacts__form-label-text">
+                                    Имя
+                                </span>
+                                <input type="text" name="name" class="contacts__form-input" required>
+                            </label>
+
+                        </div>
+                        <div class="contacts__form-field contacts__form-field--high">
+                            <label class="contacts__form-label">
+                                <span class="contacts__form-label-text">
+                                    Сообщение
+                                </span>
+                                <textarea name="comment" class="contacts__form-input" required></textarea>
+                            </label>
+
+                        </div>
+                        <div class="contacts__form-field">
+                            <label class="contacts__form-label">
+                                <span class="contacts__form-label-text">
+                                    E-mail
+                                </span>
+                                <input type="email" name="name" class="contacts__form-input" required>
+                            </label>
+
+                        </div>
+                        <div class="contacts__form-remark">
+                            Все поля обязательны для заполнения
+                        </div>
+                        <button class="contacts__form-submit" type="submit">
+                            Отправить
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="contacts__col">
+                <a href="#" class="contacts__shop-link">
+                    <img src="img/shop-link-bg.jpg" alt="" class="contacts__shop-link-image">
+                    <div class="contacts__shop-link-content">
+                        <h3 class="contacts__shop-link-title">
+                            Одежда и аксессуары<br>
+                            Carville Racing Drift Team
+
+                        </h3>
+                        <div class="contacts__shop-link-bottom-row">
+                            <div class="contacts__shop-link-url">
+                                carvilleshop.ru
+                            </div>
+                            <div class="contacts__shop-link-arrow">
+                                <svg width="14" height="14" aria-hidden="true" class="icon-diagonal-arrow">
+                                    <use xlink:href="#diagonal-arrow"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="contacts__modal js-modal" id="contacts-modal">
+            <div class="contacts__modal-inner">
+                <button class="contacts__modal-close js-close-modal">
+                    <svg width="14" height="14" aria-hidden="true" class="icon-cross">
+                        <use xlink:href="#cross"></use>
+                    </svg>
+                </button>
+                <h3 class="contacts__modal-heading">
+                    Заявка на партнерство гоночной команды
+                </h3>
+                <form action="/" method="POST" class="contacts__modal-form" data-need-validation="">
+                    <div class="contacts__form-fields">
+
+
+                        <div class="contacts__form-field">
+                            <div class="contacts__form-label" id="collab">
+                                <span class="contacts__form-label-text">
+                                    Вид сотрудничества *
+                                </span>
+                                <div class="contacts__form-select">
+                                    <select name="collab" class="js-custom-select" required="" data-parsley-errors-container="#collab" data-parsley-class-handler="#collab">
+                                        <option value="">
+                                            
+                                        </option>
+                                        <option value="1">
+                                            Вид 1
+                                        </option>
+                                        <option value="2">
+                                            Вид 2
+                                        </option>
+                                        <option value="3">
+                                            Вид 3
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="contacts__form-field">
+                            <label class="contacts__form-label">
+                                <span class="contacts__form-label-text">
+                                    Ваше имя *
+                                </span>
+                                <input type="text" name="name" class="contacts__form-input" required>
+                            </label>
+
+                        </div>
+                        <div class="contacts__form-field">
+                            <label class="contacts__form-label">
+                                <span class="contacts__form-label-text">
+                                    Компания
+                                </span>
+                                <input type="text" name="company" class="contacts__form-input">
+                            </label>
+
+                        </div>
+                        <div class="contacts__form-field">
+                            <label class="contacts__form-label">
+                                <span class="contacts__form-label-text">
+                                    Сайт
+                                </span>
+                                <input type="text" name="website" class="contacts__form-input">
+                            </label>
+
+                        </div>
+                        <div class="contacts__form-field">
+                            <label class="contacts__form-label">
+                                <span class="contacts__form-label-text">
+                                    Адрес
+                                </span>
+                                <input type="text" name="address" class="contacts__form-input">
+                            </label>
+
+                        </div>
+                        <div class="contacts__form-field contacts__form-field--superhigh">
+                            <label class="contacts__form-label">
+                                <span class="contacts__form-label-text">
+                                    Сообщение
+                                </span>
+                                <textarea name="comment" class="contacts__form-input"></textarea>
+                            </label>
+
+                        </div>
+                        <div class="contacts__form-field">
+                            <label class="contacts__form-label">
+                                <span class="contacts__form-label-text">
+                                    E-mail *
+                                </span>
+                                <input type="email" name="email" class="contacts__form-input" required>
+                            </label>
+
+                        </div>
+                        <div class="contacts__form-field">
+                            <label class="contacts__form-label">
+                                <span class="contacts__form-label-text">
+                                    Телефон *
+                                </span>
+                                <input type="tel" name="phone" class="contacts__form-input js-phone-input" required=""
+                                    data-parsley-phone="">
+                            </label>
+
+                        </div>
+                        <div class="contacts__form-remark">
+                            Все поля обязательны для заполнения
+                        </div>
+                        <button class="contacts__form-submit" type="submit">
+                            Отправить
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="contacts__modal js-modal" id="contacts-success-modal">
+            <div class="contacts__modal-inner contacts__modal-inner--narrow">
+               
+                <h3 class="contacts__modal-heading contacts__modal-heading--centered">
+                    Ваша заявка отправлена
+                </h3>
+                <img src="img/success-icon.svg" alt="" class="contacts__modal-success-icon">
+                <button class="contacts__modal-success-close js-close-modal">
+                    Закрыть
+                </button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="partners">
+
+
+    <picture>
+        <source srcset="img/partners-mobile.svg" media="(max-width: 640px)">
+        <img src="img/footer-bg.svg" alt="MDN" class="partners__bg">
+    </picture>
+    <div class="container">
+        <h2 class="partners__heading">
+            Партнёры
+        </h2>
+        <ul class="partners__list">
+            <li class="partners__list-item">
+                <a href="#" class="partners__card">
+                    <img data-src="img/partners/startvolt.svg" alt="" class="partners__card-logo lazyload">
+                    <h4 class="partners__card-title">
+                        Генераторы, стартеры
+                        и другая автоэлектрика
+                    </h4>
+                </a>
+            </li>
+            <li class="partners__list-item">
+                <a href="#" class="partners__card">
+                    <img data-src="img/partners/airline.svg" alt="" class="partners__card-logo lazyload">
+                    <h4 class="partners__card-title">
+                        Автомобильные
+                        аксессуары
+                    </h4>
+                </a>
+            </li>
+            <li class="partners__list-item">
+                <a href="#" class="partners__card">
+                    <img data-src="img/partners/trialli.svg" alt="" class="partners__card-logo lazyload">
+                    <h4 class="partners__card-title">
+                        Автокомпоненты
+                        премиум-класса
+                    </h4>
+                </a>
+            </li>
+            <li class="partners__list-item">
+                <a href="#" class="partners__card">
+                    <img data-src="img/partners/luzar.svg" alt="" class="partners__card-logo lazyload">
+                    <h4 class="partners__card-title">
+                        Радиаторы и детали
+                        систем охлаждения
+                    </h4>
+                </a>
+            </li>
+            <li class="partners__list-item">
+                <a href="#" class="partners__card">
+                    <img data-src="img/partners/cr.svg" alt="" class="partners__card-logo lazyload">
+                    <h4 class="partners__card-title">
+                        Автохимия
+                        и технические жидкости
+                    </h4>
+                </a>
+            </li>
+            <li class="partners__list-item">
+                <a href="#" class="partners__card">
+                    <img data-src="img/partners/dvizhok.svg" alt="" class="partners__card-logo lazyload">
+                    <h4 class="partners__card-title">
+                        Автомобильный
+                        журнал
+                    </h4>
+                </a>
+            </li>
+            <li class="partners__list-item">
+                <a href="#" class="partners__card">
+                    <img data-src="img/partners/shonx.svg" alt="" class="partners__card-logo lazyload">
+                    <h4 class="partners__card-title">
+                        Поставки
+                        гоночной экипировки
+                    </h4>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+
+
+{{/content}}
+{{/extend}}
