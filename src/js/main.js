@@ -26,6 +26,8 @@ import teamPilotsSlider from './teamPilotsSlider';
 import successSlider from './successSlider';
 import results from './results';
 import resultsShowMore from './resultsShowMore';
+import otherNewsSlider from './otherNewsSlider';
+import linkCopy from './linkCopy';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -54,6 +56,8 @@ document.addEventListener('DOMContentLoaded', function () {
     successSlider();
     results();
     resultsShowMore();
+    otherNewsSlider();
+    linkCopy();
     
 });
 
