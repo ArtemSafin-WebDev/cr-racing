@@ -520,12 +520,22 @@
     border-bottom: 0.3rem solid var(--primary-color);
     margin-bottom: 1.5rem;
     font-weight: 500;
+    text-transform: uppercase;
+    @include breakpoint(mobile) {
+        font-size: 1.8rem;
+        line-height: 1.2;
+
+    }
 }
 
 .article__remark-text {
     font-size: 1.9rem;
     line-height: 2.8rem;
     font-weight: 600;
+
+    @include breakpoint(mobile) {
+        font-size: 2.2rem;
+    }
 }
 
 .blockquote__author {
